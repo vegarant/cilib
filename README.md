@@ -59,9 +59,9 @@ and to cite the code, please use
 ```
 @misc{CIlib,
 	Author = {Vegard Antun},
-    Year = {2020},
+	Year = {2020},
 	Title = {{CI}lib --  A software library for compressive imaging},
-    note = {https://github.com/vegarant/cilib},
+	note = {https://github.com/vegarant/cilib},
 }
 ```
 
