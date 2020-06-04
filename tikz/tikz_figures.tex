@@ -1,0 +1,857 @@
+\documentclass[10pt,english,a4paper]{article}
+\usepackage[T1]{url}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref} %colorlinks=true, linkcolor=blue!90!black
+\usepackage{graphicx, varioref, babel, fancyvrb, listings, amsmath,amsthm, amssymb, enumerate, mathtools}
+\usepackage{tikz}
+
+\usepackage{pgfplots}
+%%\usepackage{tikz-cd}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{arrows.meta} % requiers tikz v3.0 or newer
+\tikzset{cross/.style={cross out, draw, 
+         minimum size=2*(#1-\pgflinewidth), 
+         inner sep=0pt, outer sep=0pt},
+         cross/.default={3pt}}
+
+
+\begin{document}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.85]
+    \input{figure_tex_files/line_geom}
+\end{tikzpicture}
+    \caption{The parametrization $(t, \theta)$
+of lines in the plane. (Figure 2.3).}
+\end{figure}    
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.85]
+    \input{figure_tex_files/paley}
+\end{tikzpicture}
+    \caption{The 16 first Walsh functions 
+with the Paley $(v_{n}^{P})$ or sequency $(v_{n}^{S})$ orderings.
+(Figure 2.4).}
+\end{figure}    
+
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+\draw (0,0) circle (1.1);
+\draw (-2.6, 0) -- (2.6, 0);
+\draw (0, -2.6) -- (0, 2.6);
+\draw (0.247487,3.21734) -- (-3.21734, -0.247487);
+\draw (-0.247487,-3.21734) -- (3.21734, 0.247487);
+\draw[dashed] (-2.40416,0.565685) -- (0.565685, -2.40416);
+\draw[dashed] (2.40416,-0.565685) -- (-0.565685, 2.40416);
+\draw[dashed] (-2.17435,0.795495) -- (0.795495, -2.17435);
+\draw[dashed] (2.17435,-0.795495) -- (-0.795495, 2.17435);
+\draw[dashed] (-1.94454,1.0253) -- (1.0253, -1.94454);
+\draw[dashed] (1.94454,-1.0253) -- (-1.0253, 1.94454);
+\draw[dashed] (-1.71473,1.25511) -- (1.25511, -1.71473);
+\draw[dashed] (1.71473,-1.25511) -- (-1.25511, 1.71473);
+\draw (-1.48492,1.48492) -- (1.48492, -1.48492);
+\draw[dashed] (1.71473,-1.25511) -- (-1.25511, 1.71473);
+\draw[dashed] (-1.71473,1.25511) -- (1.25511, -1.71473);
+\draw[dashed] (1.71473,-1.25511) -- (-1.25511, 1.71473);
+\draw[dashed] (-1.94454,1.0253) -- (1.0253, -1.94454);
+\draw[dashed] (1.94454,-1.0253) -- (-1.0253, 1.94454);
+\draw[dashed] (-2.17435,0.795495) -- (0.795495, -2.17435);
+\draw[dashed] (2.17435,-0.795495) -- (-0.795495, 2.17435);
+\draw[dashed] (-2.40416,0.565685) -- (0.565685, -2.40416);
+\draw[dashed] (2.40416,-0.565685) -- (-0.565685, 2.40416);
+\draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (1.83848,1.83848);
+\draw[-{Latex[length=2mm, width=1mm]}] (1.95,0)  arc (0:45:1.95) node[midway, right] {$\theta$};
+\draw (1.48492,-1.48492)  node[right] {Detectors};
+\draw (-1.48492,1.48492)  node[left] {Source};
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.85]
+\draw (0,0) circle (1.1);
+\draw (-2.6, 0) -- (2.6, 0);
+\draw (0, -2.6) -- (0, 2.6);
+\draw (3.0529,0.538309)  arc (10:-100:3.1) node[midway, right] {Detectors};
+\filldraw[black] (-2.19203,2.19203)  circle (0.1) node[above] {Source};
+\draw[dashed] (-2.19203,2.19203) -- (1.8982e-16, -3.1);
+\draw[dashed] (-2.19203,2.19203) -- (0.60478, -3.04043);
+\draw[dashed] (-2.19203,2.19203) -- (1.18632, -2.86403);
+\draw[dashed] (-2.19203,2.19203) -- (1.72227, -2.57756);
+\draw (-2.19203,2.19203) -- (2.19203, -2.19203);
+\draw[dashed] (-2.19203,2.19203) -- (2.57756, -1.72227);
+\draw[dashed] (-2.19203,2.19203) -- (2.86403, -1.18632);
+\draw[dashed] (-2.19203,2.19203) -- (3.04043, -0.60478);
+\draw[dashed] (-2.19203,2.19203) -- (3.1, 0);
+\draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (1.83848,1.83848);
+\draw[-{Latex[length=2mm, width=1mm]}] (1.95,0)  arc (0:45:1.95) node[midway, right] {$\theta$};
+\end{tikzpicture}
+\end{center}
+\caption{
+Typical geometries in X-ray CT. Left: Parallel beam. Right: Fan beam. (Figure 3.6)}
+
+\end{figure}
+
+
+\begin{figure}    
+\centering
+ \begin{tabular}{@{}c@{\hspace{0.05\linewidth}}c@{}}
+\begin{tikzpicture}[scale=1.2]
+    \draw[thick, rounded corners, rotate around ={30:(1,0.5)}] (4,0) rectangle (6,1) node[midway] {Light};
+    \fill[yellow, opacity=0.5] (1,0) -- (1,1) -- (3.6,2.0) --cycle;
+    \draw[thick, rounded corners] (1,-0.2) -- (1,1.2) node[above] {Object};
+    \fill[yellow, opacity=0.5] (1,0) rectangle (3,1);
+    %\fill[yellow, opacity=0.5] (3,0) -- (5,0) --  (4.8,1) -- (3,1) --cycle;
+    \fill[yellow, opacity=0.5] (3,0) -- (3.8, 0.5) -- (3,1) -- cycle; 
+    \fill[yellow, opacity=0.5] (3.8, 0.5) -- (5,0) -- (4.8,1) -- cycle; 
+    \fill[cyan, opacity=0.5] (3,0.5) ellipse (0.1 and 0.5);
+    \draw[thick] (3,0.5) ellipse (0.1 and 0.5);
+    \fill[yellow, opacity=0.5] (4.8,1) -- (3.5, -0.7)  --(3.5, -1.7) -- (5, 0) --cycle;
+    \draw[thick] (4.7, 1.5) -- (5.1, -0.5) node[below] {DMD};
+    \fill[yellow, opacity=0.5] (3.5, -0.7) -- (3.5, -1.7) -- (2, -1.2) -- cycle;
+    \fill[cyan, opacity=0.5] (3.5,-1.2) ellipse (0.1 and 0.5); 
+    \draw[thick] (3.5,-1.2) ellipse (0.1 and 0.5);
+    \draw[thick] (0.3, -1.5) rectangle (2, -0.9) node[midway] {Sensor};
+\end{tikzpicture}
+&
+    \centering
+    \begin{tikzpicture}[scale=0.57]
+       \input{figure_tex_files/dmd_grid_40} 
+    \end{tikzpicture}
+    \end{tabular}
+\caption{Left: A typical single-pixel camera setup.  Right: The DMD showing a selection of mirrors in the `on' (white) and `off' (black) positions. (Figure 3.9).}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \filldraw[cyan, draw=black, very thick] (0,0) rectangle (4,0.5);
+        \filldraw[cyan!60!orange, draw=black, very thick] (0,0.5) rectangle (4,1);
+        \filldraw[cyan!30!orange, draw=black, very thick] (0,1) rectangle (4,1.5);
+        \filldraw[orange, draw=black, very thick] (0,1.5) rectangle (4,2);
+        \filldraw[orange!60!green, draw=black, very thick] (0,2) rectangle (4,2.5);
+        \filldraw[green!80!red, draw=black, very thick] (0,2.5) rectangle (4,3);
+        \filldraw[purple, draw=black, very thick] (0,3) rectangle (4,3.5);
+        \filldraw[teal, draw=black, very thick] (0,3.5) rectangle (4,4);
+        \draw[very thick] (0, 0) -- (0, 4);
+        \draw[very thick] (0.5, 0) -- (0.5, 4);
+        \draw[very thick] (1, 0) -- (1, 4);
+        \draw[very thick] (1.5, 0) -- (1.5, 4);
+        \draw[very thick] (2, 0) -- (2, 4);
+        \draw[very thick] (2.5, 0) -- (2.5, 4);
+        \draw[very thick] (3, 0) -- (3, 4);
+        \draw[very thick] (3.5, 0) -- (3.5, 4);
+        \filldraw[cyan, draw=black, very thick] (4.4,0) rectangle (8.4,0.5);
+        \filldraw[white, draw=black, very thick] (4.4,0.5) rectangle (8.4,1);
+        \filldraw[cyan!30!orange, draw=black, very thick] (4.4,1) rectangle (8.4,1.5);
+        \filldraw[orange, draw=black, very thick] (4.4,1.5) rectangle (8.4,2);
+        \filldraw[orange!60!green, draw=black, very thick] (4.4,2) rectangle (8.4,2.5);
+        \filldraw[white, draw=black, very thick] (4.4,2.5) rectangle (8.4,3);
+        \filldraw[purple, draw=black, very thick] (4.4,3) rectangle (8.4,3.5);
+        \filldraw[white, draw=black, very thick] (4.4,3.5) rectangle (8.4,4);
+        \draw[very thick] (4.4, 0) -- (4.4, 4);
+        \draw[very thick] (4.9, 0) -- (4.9, 4);
+        \draw[very thick] (5.4, 0) -- (5.4, 4);
+        \draw[very thick] (5.9, 0) -- (5.9, 4);
+        \draw[very thick] (6.4, 0) -- (6.4, 4);
+        \draw[very thick] (6.9, 0) -- (6.9, 4);
+        \draw[very thick] (7.4, 0) -- (7.4, 4);
+        \draw[very thick] (7.9, 0) -- (7.9, 4);
+        \filldraw[cyan, draw=black, very thick] (8.8,0.75) rectangle (12.8,1.25);
+        \filldraw[cyan!30!orange, draw=black, very thick] (8.8,1.25) rectangle (12.8,1.75);
+        \filldraw[orange, draw=black, very thick] (8.8,1.75) rectangle (12.8,2.25);
+        \filldraw[orange!60!green, draw=black, very thick] (8.8,2.25) rectangle (12.8,2.75);
+        \filldraw[purple, draw=black, very thick] (8.8,2.75) rectangle (12.8,3.25);
+        \draw[very thick] (8.8, 0.75) -- (8.8, 3.25);
+        \draw[very thick] (9.3, 0.75) -- (9.3, 3.25);
+        \draw[very thick] (9.8, 0.75) -- (9.8, 3.25);
+        \draw[very thick] (10.3, 0.75) -- (10.3, 3.25);
+        \draw[very thick] (10.8, 0.75) -- (10.8, 3.25);
+        \draw[very thick] (11.3, 0.75) -- (11.3, 3.25);
+        \draw[very thick] (11.8, 0.75) -- (11.8, 3.25);
+        \draw[very thick] (12.3, 0.75) -- (12.3, 3.25);
+    \end{tikzpicture}
+    \caption{Left: $8 \times8$ matrix $U$ . Middle: $8 \times 8$ matrix corresponding to $P_{\Lambda} U$, where
+$\Lambda = \{2, 4, 5, 6, 8\}$. Right: $5 \times 8$ matrix corresponding to $P_{\Lambda} U$ (Figure 5.1)} 
+    %\label{}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=1.7]
+
+% p = 1
+\draw (1.7, 0) -- (4.3, 0);
+\draw (3, 1.3) -- (3, -1.3) node[below] {$p = 1$};
+\draw[dashed] (2,0) -- (3,1) -- (4,0) -- (3, -1) -- (2,0);
+\draw (2, 1.333) -- (4.5,0.5);
+\draw (3,1) node {\textbullet};
+\draw (3,1) node[above right] {$\hat{x}$};
+
+
+% p = 2
+
+\draw (5.7, 0) -- (8.3, 0);
+\draw (7, 1.3) -- (7, -1.3) node[below] {$p = 2$};
+\draw[dashed] (7,0) circle (1);
+\draw (6, 1.4) -- (8.5, 0.57);
+\draw (7 + 0.32,0.94) node {\textbullet};
+\draw (7  + 0.32,0.94) node[above right] {$\hat{x}$};
+
+\end{tikzpicture}
+\end{center}
+\caption{The $\ell^1$-norm promotes sparsity. (Figure 5.3)}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=0.8] % Use the scale parameter to adjust size
+        \draw (0,0) -- (8,0) -- (8,8) -- (0,8) -- (0,0);
+        \draw (0,4) -- (4,4) -- (4,8);
+        \draw[dashed] (4,4) -- (8,4);
+        \draw[dashed] (4,4) -- (4,0);
+        \draw (0,6) -- (2,6) -- (2,8);
+        \draw[dashed] (2,6) -- (4,6);
+        \draw[dashed] (2,6) -- (2,4);
+        \draw (0,7) -- (1,7) -- (1,8);
+        \draw[dashed] (1,7) -- (2,7);
+        \draw[dashed] (1,7) -- (1,6);
+        \node at (2,2) {$c_{j_0+2,k}^{0,1}$};
+        \node at (6,2) {$c_{j_0+2,k}^{1,1}$};
+        \node at (6,6) {$c_{j_0+2,k}^{1,0}$};
+        
+        \node at (1,5) {$c_{j_0+1,k}^{0,1}$};
+        \node at (3,5) {$c_{j_0+1,k}^{1,1}$};
+        \node at (3,7) {$c_{j_0+1,k}^{1,0}$};
+        
+        \node at (0.5,6.5) {$c_{j_0,k}^{0,1}$};
+        \node at (1.5,6.5) {$c_{j_0,k}^{1,1}$};
+        \node at (1.5,7.5) {$c_{j_0,k}^{1,0}$};
+        \node at (0.5,7.5) {$d_{j_0,k}$};
+    \end{tikzpicture}
+    \caption{Ordering of wavelet coefficients. (Figure 9.7) }
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}[scale=1]
+% DWT
+\draw[->, thick] (0,0) node[left] {$c_{j_1}$} -- (1.5,0) node[right] {$c_{j_1-1}$};
+\draw[->, thick] (0,0)  -- (1.5,1) node[right] {$d_{j_1-1}$};
+\draw[->, thick] (2.5,0) -- (4.0,0) node[right] {$c_{j_1-2}$};
+\draw[->, thick] (2.5,0) -- (4.0,1) node[right] {$d_{j_1-2}$};
+\draw (5.0,0) node[right] {$\cdots$};
+\draw[->, thick] (5.8,0) -- (7.3,0) node[right] {$c_{j_0+1}$};
+\draw[->, thick] (5.8,0) -- (7.3,1) node[right] {$d_{j_0+1}$};
+\draw[->, thick] (8.3,0) -- (9.8,0) node[right] {$c_{j_0}$};
+\draw[->, thick] (8.3,0) -- (9.8,1) node[right] {$d_{j_0}$};
+\end{tikzpicture}
+
+\vspace{12pt}
+\begin{tikzpicture}[scale=1]
+% IDWT
+\draw[->, thick] (0,0) node[left] {$c_{j_0}$} -- (1.5,0) node[right] {$c_{j_0+1}$};
+\draw[->, thick] (0,1) node[left] {$d_{j_0}$} -- (1.5,0.2) ;
+\draw[->, thick] (2.5,0) -- (4.0,0) node[right] {$c_{j_0+2}$};
+\draw[->, thick] (2.5,1) node[left] {$d_{j_0+1}$} -- (4.0,0.2) ;
+\draw (5.0,0) node[right] {$\cdots$};
+\draw[->, thick] (6.8,0) node[left] {$c_{j_{1}-2}$} -- (8.3,0) node[right] {$c_{j_1-1}$};
+\draw[->, thick] (6.8,1) node[left] {$d_{j_1-1}$}-- (8.3,0.2) ;
+\draw[->, thick] (9.3,0) -- (10.8,0) node[right] {$c_{j_1}$};
+\draw[->, thick] (9.3,1) node[left] {$d_{j_1}$}-- (10.8,0.2) ;
+\end{tikzpicture}
+\caption{Implementation of the DWT (top row) and its inverse (bottom row). (Figure 9.8)}
+\label{f:cascade}
+\end{figure}
+
+\begin{figure}
+ \begin{center}
+ \begin{tabular}{@{}cc@{}}    
+    \begin{tikzpicture}[scale=0.8]
+    
+    	\draw (0,0) node[below left] {0};
+	
+        \draw[ultra thick] (0,0) -- (8,0)  node[below] {8};
+        \draw[ultra thick] (0,0) -- (0,8)  node[left] {8};
+        \draw (8,0) -- (8,8) -- (0,8);
+        
+        \draw (1,0) node[below] {1} -- (1,8);
+        \draw (2,0) node[below] {2} -- (2,8);
+        \draw (4,0) node[below] {4} -- (4,8);
+        
+        \draw (0,1) node[left] {1} -- (8,1);
+        \draw (0,2) node[left] {2} -- (8,2);
+        \draw (0,4) node[left] {4} -- (8,4);
+        
+        \draw (0.5, 0.5) node {$B_{1,1}^{(2)}$};
+        \draw (0.5, 1.5) node {$B_{1,2}^{(2)}$};
+        \draw (0.5, 3)   node {$B_{1,3}^{(2)}$};
+        \draw (0.5, 6)   node {$B_{1,4}^{(2)}$};
+        
+        \draw (1.5, 0.5) node {$B_{2,1}^{(2)}$};
+        \draw (1.5, 1.5) node {$B_{2,2}^{(2)}$};
+        \draw (1.5, 3)   node {$B_{2,3}^{(2)}$};
+        \draw (1.5, 6)   node {$B_{2,4}^{(2)}$};
+
+        \draw (3, 0.5) node {$B_{3,1}^{(2)}$};
+        \draw (3, 1.5) node {$B_{3,2}^{(2)}$};
+        \draw (3, 3)   node {$B_{3,3}^{(2)}$};
+        \draw (3, 6)   node {$B_{3,4}^{(2)}$};
+        
+        \draw (6, 0.5) node {$B_{4,1}^{(2)}$};
+        \draw (6, 1.5) node {$B_{4,2}^{(2)}$};
+        \draw (6, 3)   node {$B_{4,3}^{(2)}$};
+        \draw (6, 6)   node {$B_{4,4}^{(2)}$};
+    \end{tikzpicture}
+\\
+    \begin{tikzpicture}[scale=0.8]
+    
+    	\draw (0,0) node[below left] {0};
+    
+        \draw[ultra thick] (0,0) -- (8,0)  node[below] {8};
+        \draw[ultra thick] (0,0) -- (0,8)  node[left] {8};
+        \draw (8,0) -- (8,8) -- (0,8);
+        
+        \draw (1,0) node[below] {1} -- (1,1) -- (0,1) node[left] {1};
+        \draw (2,0) node[below] {2} -- (2,2) -- (0,2) node[left] {2};
+        \draw (4,0) node[below] {4} -- (4,4) -- (0,4) node[left] {4};
+        
+        \draw (0.5, 0.5) node {$\overline{B}_{1}^{(2)}$};
+        \draw (1.5, 1.5) node {$\overline{B}_{2}^{(2)}$};
+        \draw (3, 3)     node {$\overline{B}_{3}^{(2)}$};
+        \draw (6, 6)     node {$\overline{B}_{4}^{(2)}$};
+    \end{tikzpicture}
+
+\end{tabular}
+\end{center}
+\caption{
+The sets defining the partitions of $\mathbb{N}^2_0$ with index $j_0 = 0$.  Top: Dyadic anisotropic partition.  Bottom: Dyadic isotropic partition. (Figure 15.1)
+}
+\end{figure}
+
+
+\begin{figure}
+ \begin{center}
+ \begin{tabular}{@{}cc@{}}    
+
+  \begin{tikzpicture}[scale=0.8]
+        \draw (0,0) -- (8,0) -- (8,8) -- (0,8) -- (0,0);
+        
+        % Center cross
+        \draw[ultra thick] (0,4) node[below left] {$-2$} -- (8,4) node[below right] {$2$};   
+        \draw[ultra thick] (4,0) node[below left] {$-2$} -- (4,8) node[above left] {$2$};   
+        
+        \draw (3,0) -- (3,8);
+        \draw (2,0) -- (2,8);
+        \draw (5,0) -- (5,8);
+        \draw (6,0) -- (6,8);
+        
+        \draw (0,3) -- (8,3);
+        \draw (0,2) -- (8,2);
+        \draw (0,5) -- (8,5);
+        \draw (0,6) -- (8,6);
+        
+     %   \draw (4,4) node[below left] {$0$};
+        \draw (2,4) node[below left] {$-1$};
+        \draw (6,4) node[below right] {$1$};
+        \draw (4,6) node[above left] {$1$};
+        \draw (4,2) node[below left] {$-1$};
+%        \draw (5,4) node[below right] {$\tfrac{1}{2}$};
+%        \draw (4,5) node[above left] {$\tfrac{1}{2}$};
+        
+    
+%        \draw[thick, pattern=north east lines, opacity=0.3] (3,3) rectangle (5,5);
+        \draw (4.5,4) node[above] {$B_{1,1}^{(2)}$};
+        \draw (3.5,4) node[above] {$B_{1,1}^{(2)}$};
+        \draw (4.5,3) node[above] {$B_{1,1}^{(2)}$};
+        \draw (3.5,3) node[above] {$B_{1,1}^{(2)}$};
+        
+        \draw (5.5,4) node[above] {$B_{2,1}^{(2)}$};
+        \draw (5.5,3) node[above] {$B_{2,1}^{(2)}$};
+        \draw (2.5,4) node[above] {$B_{2,1}^{(2)}$};
+        \draw (2.5,3) node[above] {$B_{2,1}^{(2)}$};
+        
+        \draw (3.5,5) node[above] {$B_{1,2}^{(2)}$};
+        \draw (4.5,5) node[above] {$B_{1,2}^{(2)}$};
+        \draw (3.5,2) node[above] {$B_{1,2}^{(2)}$};
+        \draw (4.5,2) node[above] {$B_{1,2}^{(2)}$};
+        
+        \draw (2.5,5) node[above] {$B_{2,2}^{(2)}$};
+        \draw (5.5,5) node[above] {$B_{2,2}^{(2)}$};
+        \draw (2.5,2) node[above] {$B_{2,2}^{(2)}$};
+        \draw (5.5,2) node[above] {$B_{2,2}^{(2)}$};
+        
+        \draw (7,6.5) node[above] {$B_{3,3}^{(2)}$};
+        \draw (1,6.5) node[above] {$B_{3,3}^{(2)}$};
+        \draw (7,0.5) node[above] {$B_{3,3}^{(2)}$};
+        \draw (1,0.5) node[above] {$B_{3,3}^{(2)}$};
+        
+       \draw (7,5.0) node[above] {$B_{3,2}^{(2)}$};
+        \draw (1,5.0) node[above] {$B_{3,2}^{(2)}$};
+        \draw (7,2.0) node[above] {$B_{3,2}^{(2)}$};
+        \draw (1,2.0) node[above] {$B_{3,2}^{(2)}$};
+        
+        \draw (7,4.0) node[above] {$B_{3,1}^{(2)}$};
+        \draw (1,4.0) node[above] {$B_{3,1}^{(2)}$};
+        \draw (7,3.0) node[above] {$B_{3,1}^{(2)}$};
+        \draw (1,3.0) node[above] {$B_{3,1}^{(2)}$};
+        
+        \draw (3.5,6.5) node[above] {$B_{1,3}^{(2)}$};
+        \draw (4.5,6.5) node[above] {$B_{1,3}^{(2)}$};
+        \draw (3.5,0.5) node[above] {$B_{1,3}^{(2)}$};
+        \draw (4.5,0.5) node[above] {$B_{1,3}^{(2)}$};
+        
+        \draw (5.5,6.5) node[above] {$B_{2,3}^{(2)}$};
+        \draw (2.5,6.5) node[above] {$B_{2,3}^{(2)}$};
+        \draw (5.5,0.5) node[above] {$B_{2,3}^{(2)}$};
+        \draw (2.5,0.5) node[above] {$B_{2,3}^{(2)}$};
+        
+        
+    \end{tikzpicture}
+
+\\
+
+ \begin{tikzpicture}[scale=0.8]
+        \draw (0,0) -- (8,0) -- (8,8) -- (0,8) -- (0,0);
+        
+        % Center cross
+        \draw[ultra thick] (0,4) node[below left] {$-2$} -- (8,4) node[below right] {$2$};   
+        \draw[ultra thick] (4,0) node[below left] {$-2$} -- (4,8) node[above left] {$2$};   
+        
+        
+%        \draw (3,4) node[below left] {$-\tfrac{1}{2}$};
+    %    \draw (4,4) node[below left] {$0$};
+        \draw (2,4) node[below left] {$-1$};
+        \draw (6,4) node[below right] {$1$};
+%        \draw (5,4) node[below right] {$\tfrac{1}{2}$};
+%        \draw (4,5) node[above left] {$\tfrac{1}{2}$};
+        \draw (4,6) node[above left] {$1$};
+        \draw (4,2) node[below left] {$-1$};
+%        \draw (4,3) node[below left] {$-\tfrac{1}{2}$};
+    
+        \draw (3,3) rectangle (5,5);
+        \draw (2,2) rectangle (6,6);
+        
+      \draw (4.5,5) node[below] {$\bar{B}_{1}^{(2)}$};
+        \draw (5.5,6) node[below] {$\bar{B}_{2}^{(2)}$};
+        \draw (7.5,8) node[below] {$\bar{B}_{3}^{(2)}$};
+        
+    \end{tikzpicture}
+
+
+
+\end{tabular}
+\end{center}
+\caption{
+The sets defining the partitions of $\mathbb{Z}^2$ with index $j_0 = 0$.  Top: Dyadic anisotropic partition.  Bottom: Dyadic isotropic partition. (Figure 15.2).
+}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=1]
+        
+        \input{figure_tex_files/2layer_net.tex}
+    \end{tikzpicture}
+    \caption{A diagram of a neural network with a single hidden layer and widths
+             $n_0 = 5$, $n_1 = 3$ and $n_2 = 2$. (Figure 18.2).} 
+\end{figure}
+
+\begin{figure}
+    \centering
+        \begin{tikzpicture}
+            \draw[thick,-{Latex[length=3mm, width=1.5mm]}] (0,0) -- (4,0) node[below] {Epochs};
+            \draw[thick,-{Latex[length=3mm, width=1.5mm]}] (0,0) -- (0,4) node[left, above]  {Loss};
+
+            \draw[thick,domain=0:3.5] plot (\x, {0.01*(\x-4)*(\x-4)*(\x-4)*(\x-4)+0.2}) node[right] {Training error};
+            \draw[thick,dashed, domain=0:3.5] plot (\x, {0.5*(\x-2)*(\x-2)+1.2}) node[right] {Validation error};
+
+            \draw[thick,] (2,0.1) -- (2, -0.1) node[below, align=center] {Early \\ stopping}; 
+        \end{tikzpicture}
+    \caption{Early stopping. (Figure 18.3).} 
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \input{figure_tex_files/imagenet.tex}
+    \end{tikzpicture}
+    \caption{Winners of the ImageNet Large Scale Visual Recognition Challenge (ILSVRC). All of the winners since 2012 are based on deep learning.} 
+    %\label{}
+\end{figure}
+
+\begin{figure}
+        \begin{tikzpicture}
+            \node at (6,4) {$f(x)< 0$};
+            \node at (7.5,2.8) {$f(x)> 0$};
+            \draw (0,0) -- (8,4) node[right] {$H$};
+            %\draw[->] (4.75,0.5) -- (4,2);
+
+            \draw[-{Latex[length=3mm, width=1.5mm]}] (1,0.5) -- (0.5,1.5) node[above] {$\omega$};
+
+            \draw[-{Latex[length=3mm, width=1.5mm]}] (4.75,0.5) -- (4,2);
+            \node at (3.9,2.3) {$x_0+\hat{r}$};
+            \node[right, below] at (4.75, 0.5) {$x_0$};
+            \fill[black] (4.75,0.5) circle (0.05);
+        \end{tikzpicture}
+        \caption{Adversarial example for an affine binary classifier. (Figure 18.6).} 
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \draw (7,2) node[below] {$H_1$} -- (4,5);
+        \draw (1,1) -- (6,5) node[right] {$H_3$};
+        \draw (0,1) -- (7,2.5) node[right] {$H_2$};
+        \node at (3.5,2.3) {$P$};
+        \fill[black] (5,3) circle (0.05) node[below] {$x_0$};
+        \draw[-{Latex[length=3mm, width=1.5mm]}] (5, 3) -- (5.5,3.5) node[right] {$x_0 + \hat{r}$};
+    \end{tikzpicture}
+\caption{Deep Fool. (Figure (18.7).}
+\end{figure}
+
+\begin{figure}
+ 	\centering
+ 	    \begin{tikzpicture}[scale=1.1]
+       \fill[black!100] (0,1) rectangle (3,3);
+ \fill[black!100] (3+0.5,0) rectangle (6+0.5,1);
+ \fill[black!100] (3+0.5,2) rectangle (6+0.5,3);
+ \fill[black!100] (6+2*0.5,0) rectangle (9+2*0.5,2);
+ \fill[black!78] (0,3+0.5) rectangle (2,6+0.5);
+ \fill[black!78] (3+0.5,3+0.5) rectangle (4+0.5,6+0.5);
+ \fill[black!78] (5+0.5,3+0.5) rectangle (6+0.5,6+0.5);
+ \fill[black!78] (7+2*0.5, 3+0.5) rectangle (9+2*0.5,6+0.5);
+ \fill[black!16] (0,0) rectangle (3,1);
+ \fill[black!16] (3+0.5,1) rectangle (6+0.5,2);
+ \fill[black!16] (6+2*0.5,2) rectangle (9+2*0.5,3);
+ \draw[very thick, gray!80] (0,0) rectangle (3,3);
+ \draw[very thick, gray!80] (3+0.5,0) rectangle (6+0.5,3);
+ \draw[very thick, gray!80] (6+1,0) rectangle (9+1,3);
+ \draw[very thick, gray!80] (0, 3+0.5) rectangle (3, 6+0.5);
+ \draw[very thick, gray!80] (3+0.5, 3+0.5) rectangle (6+0.5, 6+0.5);
+ \draw[very thick, gray!80] (6+1, 3+0.5) rectangle (9+1, 6+0.5);
+ \draw[very thick, gray!80] (1,0) -- (1,3);
+ \draw[very thick, gray!80] (2,0) -- (2,3);
+ \draw[very thick, gray!80] (3+0.5+1,0) -- (3+0.5+1,3);
+ \draw[very thick, gray!80] (3+0.5+2,0) -- (3+0.5+2,3);
+ \draw[very thick, gray!80] (6+2*0.5+1,0) -- (6+2*0.5+1,3);
+ \draw[very thick, gray!80] (6+2*0.5+2,0) -- (6+2*0.5+2,3);
+ \draw[very thick, gray!80] (1,3+0.5) -- (1,6+0.5);
+ \draw[very thick, gray!80] (2,3+0.5) -- (2,6+0.5);
+ \draw[very thick, gray!80] (3+0.5+1,3+0.5) -- (3+0.5+1,6+0.5);
+ \draw[very thick, gray!80] (3+0.5+2,3+0.5) -- (3+0.5+2,6+0.5);
+ \draw[very thick, gray!80] (6+2*0.5+1,3+0.5) -- (6+2*0.5+1,6+0.5);
+ \draw[very thick, gray!80] (6+2*0.5+2,3+0.5) -- (6+2*0.5+2,6+0.5);
+ \draw[very thick, gray!80] (0, 1) -- (3,1);
+ \draw[very thick, gray!80] (0,2) -- (3,2);
+ \draw[very thick, gray!80] (0, 3+0.5+1) -- (3, 3+0.5+1);
+ \draw[very thick, gray!80] (0, 3+0.5+2) -- (3, 3+0.5+2);
+ \draw[very thick, gray!80] (3+0.5, 1) -- (6+0.5,1);
+ \draw[very thick, gray!80] (3+0.5,2) -- (6+0.5,2);
+ \draw[very thick, gray!80] (3+0.5, 3+0.5+1) -- (6+0.5, 3+0.5+1);
+ \draw[very thick, gray!80] (3+0.5, 3+0.5+2) -- (6+0.5, 3+0.5+2);
+ \draw[very thick, gray!80] (6+2*0.5, 1) -- (9+2*0.5,1);
+ \draw[very thick, gray!80] (6+2*0.5,2) -- (9+2*0.5,2);
+ \draw[very thick, gray!80] (6+2*0.5, 3+0.5+1) -- (9+2*0.5, 3+0.5+1);
+ \draw[very thick, gray!80] (6+2*0.5, 3+0.5+2) -- (9+2*0.5, 3+0.5+2);
+ \draw[white] (4.5+0.5, 0.5)  node {$-a$};
+ \draw (4.5+0.5, 1.5)  node {$1-a$};
+ \draw[white] (4.5+0.5, 2.5)  node {$-a$};
+ \draw[white] (3.5+0.5, 4.5+0.5)  node {$a$};
+ \draw[black] (4.5+0.5, 4.5+0.5)  node {$1+a$};
+ \draw[white] (5.5+0.5, 4.5+0.5)  node {$a$}; 
+     \end{tikzpicture}
+\caption{$3 \times 3$ images with either horizontal or vertical stripes. Vertical stripes (top row) are assigned the value $a$ (dark) or $1+a$ (light), and horizontal stripes (bottom row) are assigned the values $-a$ and $1-a$ (bottom row). These images are coloured as follows: $-1/4$ represents black, $1+1/4$ represents white, and numbers in between $-1/4$ and $1+1/4$ represent shades of grey. (Figure 18.9). }
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \input{figure_tex_files/unet.tex}
+    \end{tikzpicture}
+    \caption{U-Net. (Figure 19.4).} 
+    %\label{}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \input{figure_tex_files/automap.tex}
+    \end{tikzpicture}
+    \caption{Automap. (Figure 19.5).} 
+    %\label{}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    \fill[lightgray] (5,5) circle (1.1);
+    \fill[white] (5.5,5.5) circle (0.25);
+    \draw[->] (2.3,4.7)  -- (6,7.5) node[below=0.15] {$t$}; 
+    %\draw (4, 2.68) -- (7, 4.95);
+    \draw (3.28, 5.45) .. controls (2.8,6) and  (3.2, 7) .. (3.91, 7.18) node[above=0.2, left=0.2] {$p_{\theta}$};
+    \draw (3.91, 7.18) .. controls (4.2,6.8) and (4.6,6.9) .. (4.62, 7.08);    
+    \draw (4.62, 7.08) .. controls (4.7, 7.1) and (5., 6.9) .. (5.04, 6.77);
+
+    \draw[dashed, ->] (4.5, 3.06486) node[left=0.2] {$\theta$} -- (2.91208, 5.16319);
+    \draw[dashed, ->] (4.91667, 3.38018) -- (3.32874, 5.47851);
+    \draw[dashed, ->] (5.33333, 3.6955) -- (3.74541, 5.79382);
+    \draw[dashed, ->] (5.75, 4.01081) -- (4.16208, 6.10914);
+    \draw[dashed, ->] (6.16667, 4.32613) -- (4.57874, 6.42445);
+    \draw[dashed, ->] (6.58333, 4.64144) -- (4.99541, 6.73977);
+    \draw[dashed, ->] (7, 4.95676) -- (5.41208, 7.05508);
+\end{tikzpicture}
+\end{center}
+\caption{(\textbf{Not used in the book}). Radon transform (the graph of $p_{\theta}$ is not mathematically accurate).}
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+        \input{figure_tex_files/unstable_l1.tex}
+    \end{tikzpicture}
+    \caption{(\textbf{Not used in the book}). Instability $\ell^1$-minimisation.} 
+    %\label{}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.65]
+    \input{figure_tex_files/dmd_grid_20}
+\end{tikzpicture}
+    \caption{(\textbf{Not used in the book}). DMD with grid size 20.}
+\end{figure}    
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=3]
+        \draw (0, -0.75) -- (0, 0.75);
+        \draw (-.2, 0)  -- (1.5, 0);
+        \draw (0,0.5)node[left] {$1$} -- (0.5, 0.5);
+        \draw[dashed] (0.5,0.5) --(0.5, -0.5);
+        \draw (0.5, -0.5) -- (1,-0.5);
+        \draw[dashed] (1,-0.5) --(1, 0);
+        \draw (0.02, -0.5) -- (-0.02, -0.5) node[left]{$-1$};
+        %\node[left] at (0,-0.5) {$-1$};
+        \node[below right] at (0.5,0) {$\tfrac{1}{2}$};
+        \node[below right] at (1,0) {$1$};
+        \node[above left] at (0,0) {$0$};
+        \node at (0.5, -1) {$\psi$};
+    
+        
+
+        \draw (2, -0.75) -- (2, 0.75);
+        \draw (1.8, 0)  -- (3.5, 0);
+        \draw (2, 0.5) -- (3, 0.5);
+        \draw[dashed] (3, 0.5) -- (3,0);
+        \node[left] at (2,0.5) {$1$};
+        \draw (2.02, -0.5) -- (1.98, -0.5) node[left]{$-1$};
+        \node[above left] at (2,0) {$0$};
+        \node[below] at (3,0) {$1$};
+        \node at (2.5, -1) {$\phi$};
+        
+    \end{tikzpicture}
+    \caption{(\textbf{Not used in the book}). Haar wavelet (left) and scaling function (right). } 
+    %\label{}
+\end{figure}
+
+
+\begin{figure}
+\begin{tikzpicture}[scale=1]
+    % Draw the lower picture
+    \draw (-0.5,3) node {$a_{j-2}$};
+    \draw[->, thick] (0,3) -- (1, 3);
+    \draw[thick] (1, 3.3) rectangle (1.6, 2.7);
+    \draw (1.3, 3)  node {$\uparrow 2$};
+    \draw[thick, ->] (1.6, 3) -- (2,3);
+    \draw[thick] (2, 3.3) rectangle (2.6, 2.7);
+    \draw (2.3, 3)  node {$h$};
+    \draw[thick, ->] (2.6, 3) -- (3,3);
+    \draw (3.1, 3) node {$\boldsymbol{\oplus}$};
+    
+    \draw (-0.5,1.5) node {$d_{j-2}$};
+    \draw[->, thick] (0,1.5) -- (1, 1.5);
+    \draw[thick] (1, 1.8) rectangle (1.6, 1.2);
+    \draw (1.3, 1.5)  node {$\uparrow 2$};
+    \draw[thick, ->] (1.6, 1.5) -- (2,1.5);
+    \draw[thick] (2, 1.8) rectangle (2.6, 1.2);
+    \draw (2.3, 1.5)  node {$g$};
+    \draw[thick, ->] (2.6, 1.5) -- (3.1,1.5) -- (3.1, 2.9);
+    \draw[thick, ->] (3.2,3) -- (3.5,3);
+    \draw (4,3) node {$a_{j-1}$};
+
+    \draw[->, thick] (4.5,3) -- (5.5, 3);
+    \draw[thick] (5.5, 3.3) rectangle (6.1, 2.7);
+    \draw (5.8, 3)  node {$\uparrow 2$};
+    \draw[thick, ->] (6.1, 3) -- (6.5,3);
+    \draw[thick] (6.5, 3.3) rectangle (7.1, 2.7);
+    \draw (6.8, 3)  node {$h$};
+    \draw[thick, ->] (7.1, 3) -- (7.5,3);
+    \draw (7.6, 3) node {$\boldsymbol{\oplus}$};
+    
+    \draw (4,1.5) node {$d_{j-1}$};
+    \draw[->, thick] (4.5,1.5) -- (5.5, 1.5);
+    \draw[thick] (5.5, 1.8) rectangle (6.1, 1.2);
+    \draw (5.8, 1.5)  node {$\uparrow 2$};
+    \draw[thick, ->] (6.1, 1.5) -- (6.5,1.5);
+    \draw[thick] (6.5, 1.8) rectangle (7.1, 1.2);
+    \draw (6.8, 1.5)  node {$g$};
+    \draw[thick, ->] (7.1, 1.5) -- (7.6,1.5) -- (7.6, 2.9);
+    \draw[thick, ->] (7.7,3) -- (8,3);
+    \draw (8.5,3) node {$a_{j}$};
+    
+    % Draw the upper picture
+    \draw (-0.2,6) node {$a_j$};
+    \draw[->, thick] (0,6) -- (1, 6);
+    \draw[thick] (1, 6.3) rectangle (1.6, 5.7);
+    \draw (1.3, 6)  node {$\bar{h}$};
+    \draw[thick, ->] (1.6, 6) -- (2,6);
+    \draw[thick] (2, 6.3) rectangle (2.6, 5.7);
+    \draw (2.3, 6)  node {$\downarrow 2$};
+    \draw[thick, ->] (2.6, 6) -- (3,6);
+    \draw (3.6,6)  node {$a_{j-1}$};
+    
+    \draw[thick, ->] (0.7,6) -- (0.7, 4.5) -- (1, 4.5);
+    \draw[thick] (1, 4.8) rectangle (1.6, 4.2);
+    \draw (1.3, 4.5)  node {$\bar{g}$};
+    \draw[thick, ->] (1.6, 4.5) -- (2,4.5);
+    \draw[thick] (2, 4.8) rectangle (2.6, 4.2);
+    \draw (2.3, 4.5)  node {$\downarrow 2$};
+    \draw[thick, ->] (2.6, 4.5) -- (3,4.5);
+    \draw (3.6,4.5)  node {$d_{j-1}$};
+    
+    \draw[->, thick] (4,6) -- (5, 6);
+    \draw[thick] (5, 6.3) rectangle (5.6, 5.7);
+    \draw (5.3, 6)  node {$\bar{h}$};
+    \draw[thick, ->] (5.6, 6) -- (6,6);
+    \draw[thick] (6, 6.3) rectangle (6.6, 5.7);
+    \draw (6.3, 6)  node {$\downarrow 2$};
+    \draw[thick, ->] (6.6, 6) -- (7,6);
+    \draw (7.5,6)  node {$a_{j-2}$};
+    
+    \draw[thick, ->] (4.7,6) -- (4.7, 4.5) -- (5, 4.5);
+    \draw[thick] (5, 4.8) rectangle (5.6, 4.2);
+    \draw (5.3, 4.5)  node {$\bar{g}$};
+    \draw[thick, ->] (5.6, 4.5) -- (6,4.5);
+    \draw[thick] (6, 4.8) rectangle (6.6, 4.2);
+    \draw (6.3, 4.5)  node {$\downarrow 2$};
+    \draw[thick, ->] (6.6, 4.5) -- (7,4.5);
+    \draw (7.5,4.5)  node {$d_{j-2}$};
+\end{tikzpicture}
+\caption{\textbf{Figure 7.12 in S.\ Mallat's book ``\textit{A Wavelet Tour of
+Signal Processing}" (3rd edition).} DWT algorithm}
+
+\end{figure}
+
+
+
+
+
+\begin{figure}
+
+\begin{tikzpicture}
+
+% p = 1/3
+\draw[<->] (1.3, 0) -- (-1.3, 0);
+\draw[<->] (0, 1.3) -- (0, -1.3) node[below] {$p = \frac{1}{2}$};
+\draw[black] (-1,0) 
+            to[bend right] (0,1) 
+            to[bend right] (1,0) 
+            to[bend right] (0,-1) 
+            to[bend right] (-1,0);
+\draw (-1, 1.333) -- (1.5,0.5);
+\draw (0,1) node {\textbullet};
+\draw (0,1) node[above right] {$x^{\sharp}$};
+
+% p = 1
+\draw[<->] (1.7, 0) -- (4.3, 0);
+\draw[<->] (3, 1.3) -- (3, -1.3) node[below] {$p = 1$};
+\draw (2,0) -- (3,1) -- (4,0) -- (3, -1) -- (2,0);
+\draw (2, 1.333) -- (4.5,0.5);
+\draw (3,1) node {\textbullet};
+\draw (3,1) node[above right] {$x^{\sharp}$};
+
+
+% p = 2
+
+\draw[<->] (4.7, 0) -- (7.3, 0);
+\draw[<->] (6, 1.3) -- (6, -1.3) node[below] {$p = 2$};
+\draw (6,0) circle (1);
+\draw (5, 1.4) -- (7.5, 0.57);
+\draw (6 + 0.32,0.94) node {\textbullet};
+\draw (6 + 0.32,0.94) node[above right] {$x^{\sharp}$};
+
+% p = ∞
+\draw[<->] (7.7, 0) -- (10.3, 0);
+\draw[<->] (9, 1.3) -- (9, -1.3) node[below] {$p = \infty$};
+\draw (8,1) -- (10,1) -- (10,-1) -- (8,-1) -- (8, 1);
+\draw(8,1.66) -- (10.5, 0.84);
+\draw (10,1) node {\textbullet};
+\draw (10,1) node[above right] {$x^{\sharp}$};
+
+\end{tikzpicture}
+
+\caption{(\textbf{Not used in the book}). Norm balls.}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}[scale=1]
+\draw[thick] (0,0) rectangle (5,2);
+\draw (0,1) node[left] {$m$};
+\draw (2.5,2) node[above] {$N$};
+\draw[thick] (5.2,-1.5) rectangle (5.7,3.5); 
+\draw[thick] (6.5,0) rectangle (7.0,2); 
+\draw (6.1,1) node {$=$};
+
+\draw (5.45,1) node[cross] {};
+\draw (5.45,3.35) node[cross] {};
+\draw (5.45,3.1) node[cross] {};
+\draw (5.45,1.7) node[cross] {};
+\draw (5.45,-1.0) node[cross] {};
+
+\draw (3.5,-1.9)  node {$Ax = b$};
+%\draw (5.45,-1.9) node {$\x$};
+%\draw (6.75,-1.9) node {$\b$};
+%\draw (6.1,-1.9) node {$=$};
+
+\end{tikzpicture}
+\caption{(\textbf{Not used in the book}). Underdetermined linear system where $x$ is sparse.}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\begin{figure}
+
+
+
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
