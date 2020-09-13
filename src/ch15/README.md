@@ -1,9 +1,9 @@
 #### Scripts used to generate the figures.
 -------------------------------------
 
-* Figure 15.3: Show_DAS_vs_DIS.m
-* Figure 15.4: Show_DAS_density.m
-* Figure 15.5: Show_DAS_vs_DIS_for_diff_p.m
+* Figure 15.1: Show_DAS_vs_DIS.m
+* Figure 15.3: Show_DAS_density.m
+* Figure 15.4: Show_DAS_vs_DIS_for_diff_p.m
 
 -------------------------------------
 
