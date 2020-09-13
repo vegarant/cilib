@@ -1,6 +1,6 @@
 # CIlib - A software library for compressive imaging 
 
-This repository contains a broad set of functions and tools for experimenting with various compressive imaging reconstruction techniques. It is meant as a companion to the book  _Compressive imaging: Structure, Sampling, Learning_ by Ben Adcock and Anders C. Hansen (Cambridge University Press, 2020), and can be used to reproduce most of the figures presented in the book. The code has been developed by Vegard Antun (see acknowledgement section for details).
+This repository contains a broad set of functions and tools for experimenting with various compressive imaging reconstruction techniques. It is meant as a companion to the book  _[Compressive imaging: Structure, Sampling, Learning](https://www.compressiveimagingbook.com)_ by Ben Adcock and Anders C. Hansen (Cambridge University Press, 2020), and can be used to reproduce most of the figures presented in the book. The code has been developed by Vegard Antun (see acknowledgement section for details).
 
 ## Getting started
 
