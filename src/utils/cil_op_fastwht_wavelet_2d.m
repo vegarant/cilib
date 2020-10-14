@@ -23,6 +23,10 @@
 % `sub2ind`, `fastwht`, `cil_op_fastwht_2dd`, `DWT2Impl` and `IDWT2Impl`.
 %
 function y=cil_op_fastwht_wavelet_2d(x, mode, N, idx, nres, wave_name, hadamard_order)
+    
+    if (nargin < 7)
+        hadamard_order = 'sequency';
+    end
 
     if mode == 1 
         S = cil_get_wavedec2_s(round(log2(N)), nres); 
