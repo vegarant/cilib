@@ -7,7 +7,7 @@
 % In the next version of this file, I should consider forking out the part of
 % the code which  
 
-dependent_paths = {fullfile('src','utils'), fullfile('src','samp_patt'), 'var'};
+dependent_paths = {fullfile('src','utils'), fullfile('src','misc'), fullfile('src','samp_patt'), 'var'};
 
 us_root = userpath();
 startup_file = fullfile(us_root, 'startup.m'); 
