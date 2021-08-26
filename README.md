@@ -24,7 +24,7 @@ It is required to install the following packages.
 
 * [SPGL1](http://www.cs.ubc.ca/~mpf/spgl1/) A solver for large-scale sparse reconstruction
 * [NESTA](http://statweb.stanford.edu/~candes/nesta/) A Fast and Accurate First-order Method for Sparse Recovery (in particular TV minimization).
-* [Fastwht](https://bitbucket.org/vegarant/fastwht/) A fast implementation of
+* [Fastwht](https://github.com/vegarant/fastwht) A fast implementation of
   of matlabs `fwht`-function (Optional, but recommended).
 * [ShearLab](http://www3.math.tu-berlin.de/numerik/www.shearlab.org/) 
     Shearlets (ShearLab3D v1.1)
